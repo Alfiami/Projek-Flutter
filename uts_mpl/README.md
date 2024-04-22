@@ -1,16 +1,12 @@
-# flutter_application_1
+UTS Mobile Programming - Aplikasi Profil
+Ini adalah proyek Ujian Tengah Semester (UTS) Mobile Programming yang mengimplementasikan sebuah aplikasi profil sederhana menggunakan Flutter. Aplikasi ini menampilkan profil pengguna beserta informasi kontak, dan dibangun dengan menggunakan Flutter dan Dart.
 
-A new Flutter project.
+Fitur
+Tampilan header dengan foto profil dan informasi singkat.
+Bagian "Personal Data" menampilkan informasi profil lengkap.
+Ikoni kontak untuk telepon, email, dan berbagi.
+Tampilan Aplikasi
+Berikut adalah tampilan aplikasi:
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Hasil projek setelah di run
+![](images/result.png)
