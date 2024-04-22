@@ -8,4 +8,4 @@ Ikoni kontak untuk telepon, email, dan berbagi.
 Tampilan Aplikasi
 
 ### Hasil projek setelah di run
-![](images/result.png)
+![](images/Result.png)
