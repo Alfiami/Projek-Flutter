@@ -8,63 +8,72 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Daftar Mahasiswa',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Daftar Mahasiswa'),
-        ),
-        body: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              MahasiswaTile('JULIA KURNIA MUBAROKAH', 'STI202102363'),
-              MahasiswaTile('AMIN SURATUN KHASANAH', 'STI202102368'),
-              MahasiswaTile('ALFIAMI SHOLIHATUN', 'STI202102373', isMe: true),
-              MahasiswaTile('RUSMIATI', 'STI202102380'),
-              MahasiswaTile('SATNA SETIYANA', 'STI202102386'),
-            ],
-          ),
-        ),
-      ),
+      title: 'Halo Dunia',
+      home: MyHomePage(),
     );
   }
 }
 
-class MahasiswaTile extends StatelessWidget {
-  final String name;
-  final String absenNumber;
-  final bool isMe;
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
 
-  const MahasiswaTile(this.name, this.absenNumber, {this.isMe = false});
+class _MyHomePageState extends State<MyHomePage> {
+  var listNama = [
+    'Alfiami Sholihatun',
+    'Esta Purwanti',
+    'Rusmiati',
+    'Satna Setiyana ',
+    'Wahyu Triyono '
+  ];
+
+  var listWarna = [
+    Color.fromARGB(255, 55, 22, 22),
+    Colors.purple,
+    Colors.teal,
+    Colors.lime,
+    Colors.indigo
+  ];
+
+  int index = 0;
+
+  void incrementIndex() {
+    setState(() {
+      index++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    Color backgroundColor = isMe ? Colors.green : Colors.transparent;
-    return Container(
-      color: backgroundColor,
-      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  name,
-                  style: TextStyle(fontSize: 18.0),
-                ),
-                SizedBox(height: 4.0),
-                Text(
-                  'NIM: $absenNumber',
-                  style: TextStyle(fontSize: 14.0),
-                ),
-              ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Halo Dunia'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Apa kabar',
+              textDirection: TextDirection.ltr,
             ),
-          ),
-        ],
+            Text(
+              listNama[index % listNama.length],
+              textDirection: TextDirection.ltr,
+              style: TextStyle(
+                fontSize: 45,
+                fontWeight: FontWeight.bold,
+                color: listWarna[index % listWarna.length],
+              ),
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Refresh',
+        child: Icon(Icons.refresh),
+        onPressed: incrementIndex,
       ),
     );
   }
